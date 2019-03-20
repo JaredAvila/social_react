@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import User from "./User";
+import Navbar from "../navigation/Navbar";
 
 export default class Users extends Component {
   render() {
@@ -10,9 +12,12 @@ export default class Users extends Component {
       });
     }
     return (
-      <div className="users">
-        <h3 className="header">Our Users</h3>
-        {users}
+      <div>
+        <Navbar />
+        <div className="users">
+          <h3 className="header">Our Users</h3>
+          {users}
+        </div>
       </div>
     );
   }
