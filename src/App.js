@@ -1,25 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+
+//Component Imports
+import Users from "./components/users/Users";
+
+//Style Sheets
+import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      users: []
+    };
+  }
+
+  //Get all users from "DB"
+  getUsers() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(users => {
+        this.setState({ users }, () => console.log(this.state.users));
+      });
+  }
+
+  componentDidMount() {
+    this.getUsers();
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Users users={this.state.users} />
       </div>
     );
   }
