@@ -1,8 +1,16 @@
 import React, { Component } from "react";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
+//Actions
+import { getAllUsers } from "./actions/usersActions";
 
 //Component Imports
+import Home from "./components/home/Home";
 import Users from "./components/users/Users";
 import AddUser from "./components/addUser/AddUser";
+import Navbar from "./components/navigation/Navbar";
 
 //Style Sheets
 import "./App.css";
@@ -17,32 +25,33 @@ class App extends Component {
 
   //Get all users from "DB"
 
-  addUser(user) {
-    let users = this.state.users;
-    users.push(user);
-    this.setState({ users });
-  }
-
-  getUsers() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(res => res.json())
-      .then(users => {
-        this.setState({ users }, () => console.log(this.state.users));
-      });
-  }
-
   componentDidMount() {
-    this.getUsers();
+    this.props.getAllUsers();
   }
 
   render() {
     return (
-      <div className="App">
-        <Users users={this.state.users} />
-        <AddUser addUser={this.addUser.bind(this)} />
-      </div>
+      <Router>
+        <Navbar />
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/users" component={Users} />
+          <Route path="/add" component={AddUser} />
+        </div>
+      </Router>
     );
   }
 }
 
-export default App;
+App.propTypes = {
+  getAllUsers: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  users: state.users
+});
+
+export default connect(
+  mapStateToProps,
+  { getAllUsers }
+)(App);
