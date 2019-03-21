@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import User from "./User";
 import Navbar from "../navigation/Navbar";
 
+import "../../index.css";
+
 export default class Users extends Component {
   render() {
     let users;

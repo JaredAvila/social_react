@@ -24,8 +24,6 @@
     display: flex;
     flex-wrap: wrap;
     padding: 3rem;
-    font-family: 'Quicksand', sans-serif;
-    letter-spacing: .05rem;
 }
 
 .userInfo {
