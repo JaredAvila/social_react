@@ -55,6 +55,8 @@ export default class User extends Component {
               </p>
             </div>
           </div>
+
+          <i className="material-icons deleteIcon">delete_outline</i>
         </div>
         <hr />
       </div>

@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: url('../../img/background-2068283_1280.jpg');
+    background-size: cover;
+}
+
+.addText {
+    background-color: teal;
+    color: white;
+    width: 50vw;
+    height: 100vh;
+    padding-top: 200px;
+    box-shadow: 0px 5px 6px rgb(44, 44, 44);
+}
+
+.addText h3 {
+    font-size: 2.3rem;
+    font-family: 'Cinzel Decorative', cursive;
+    text-shadow: 2px 2px 4px rgb(68, 68, 68);
+}
+
+.addText h3, .addText h5 {
+    padding-left: 200px;
+}
+
+.addText h5 {
+    color: rgb(34, 34, 34);
+    font-size: .9rem;
+    margin-left: 20px;
+}
+
+.formDiv {
+    padding: 20px 150px 0 0px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+input {
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px solid rgb(182, 182, 182);
+    outline-color: teal;
+    padding: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.suite {
+    width: 20px;
+}
+
+.coName {
+    align-self: flex-start;
+}
