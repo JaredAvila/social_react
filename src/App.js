@@ -7,10 +7,10 @@ import PropTypes from "prop-types";
 import { getAllUsers } from "./actions/usersActions";
 
 //Component Imports
-import Home from "./components/home/Home";
 import Users from "./components/users/Users";
-import AddUser from "./components/addUser/AddUser";
-import Navbar from "./components/navigation/Navbar";
+import Landing from "./components/auth/Landing";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 
 //Style Sheets
 import "./App.css";
@@ -32,11 +32,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Navbar />
         <div>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Landing} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
           <Route path="/users" component={Users} />
-          <Route path="/add" component={AddUser} />
         </div>
       </Router>
     );

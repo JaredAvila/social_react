@@ -10,3 +10,12 @@
 .navLinks {
     margin: 0 20px;
 }
+
+.authNavSecondary {
+    color: white;
+    letter-spacing: 5px;
+}
+
+.authNavLink {
+    text-decoration: none;
+}

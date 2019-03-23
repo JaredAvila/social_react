@@ -3,8 +3,11 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getUsers } from "../../actions/usersActions";
 
+//components
 import User from "./User";
+import AuthNav from "../auth/AuthNav";
 
+//stylesheets
 import "../../index.css";
 
 class Users extends Component {
@@ -33,9 +36,12 @@ class Users extends Component {
     }
 
     return (
-      <div className="users">
-        <h3 className="header">Our Users</h3>
-        {usersItems}
+      <div>
+        <AuthNav />
+        <div className="users">
+          <h3 className="header">Our Users</h3>
+          {usersItems}
+        </div>
       </div>
     );
   }

@@ -1,0 +1,36 @@
+.home {
+    background: url('../../img/human-2944064_1280.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    padding-top: 150px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.showcase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: white;
+    opacity: .95;
+    width: 100%;
+}
+
+.showcase h1 {
+    margin-right: 25px;
+}
+
+.showcaseTxt {
+    color: teal;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.3rem;
+}
+
+.showcaseSecondary {
+    letter-spacing: .7rem;
+    text-decoration: underline;
+}

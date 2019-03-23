@@ -15,3 +15,9 @@ export const getAllUsers = () => dispatch => {
       })
     );
 };
+export const addUser = user => dispatch => {
+  dispatch({
+    type: GET_USERS,
+    payload: user
+  });
+};
